@@ -1,0 +1,9 @@
+fake_data:
+  folder_path: ./data/taxi-data
+
+datalake:
+  endpoint: localhost:9000
+  bucket_name: taxi
+  folder_name: taxi-data
+  access_key: minio_access_key
+  secret_key: minio_secret_key
