@@ -3,7 +3,7 @@ from helpers import load_cfg
 from glob import glob
 import os
 
-CFG_FILE = '/home/hungnguyen/Caption-Project/utils/config.yaml'
+CFG_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'config.yaml')
 
 def main():
     cfg = load_cfg(CFG_FILE)
@@ -28,14 +28,14 @@ def main():
     # Upload files.
     all_fps_parquet = glob(
         os.path.join(
-            '/home/hungnguyen/Caption-Project/data/taxi-data',
+            os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'data', 'taxi-data'),
             "*.parquet"
         )
     )
 
     all_fps_json = glob(
         os.path.join(
-            '/home/hungnguyen/Caption-Project/data/taxi-data',
+            os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'data', 'taxi-data'),
             '**',
             "*.json"
         ),

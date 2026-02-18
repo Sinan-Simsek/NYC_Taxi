@@ -1,4 +1,3 @@
-version: "3.9"
 services:
   # Distributed query engine for various types
   # of data sources
