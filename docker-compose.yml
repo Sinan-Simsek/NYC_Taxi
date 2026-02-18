@@ -5,7 +5,7 @@ services:
     ports:
       - "8080:8080"
     container_name: datalake-trino
-    image: "trinodb/trino:410"
+    image: "trinodb/trino:432"
     hostname: trino
     volumes:
       - ./trino/etc:/usr/lib/trino/etc:ro
