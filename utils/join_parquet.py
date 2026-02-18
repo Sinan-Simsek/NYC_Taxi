@@ -1,24 +1,25 @@
 import pandas as pd
 import pyarrow.parquet as pq
+import os
 
 
-
+BASE_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'data', 'taxi')
 
 if __name__ == '__main__':
 #List the paths to the 12 Parquet files
     parquet_file_paths = [
-        "/home/hungnguyen/lake-house-with-minio/data/taxi/yellow_tripdata_2022-08.parquet",
-        "/home/hungnguyen/lake-house-with-minio/data/taxi/yellow_tripdata_2022-09.parquet",
-        "/home/hungnguyen/lake-house-with-minio/data/taxi/yellow_tripdata_2022-10.parquet",
-        "/home/hungnguyen/lake-house-with-minio/data/taxi/yellow_tripdata_2022-11.parquet",
-        "/home/hungnguyen/lake-house-with-minio/data/taxi/yellow_tripdata_2022-12.parquet",
-        "/home/hungnguyen/lake-house-with-minio/data/taxi/yellow_tripdata_2023-01.parquet",
-        "/home/hungnguyen/lake-house-with-minio/data/taxi/yellow_tripdata_2023-02.parquet",
-        "/home/hungnguyen/lake-house-with-minio/data/taxi/yellow_tripdata_2023-03.parquet",
-        "/home/hungnguyen/lake-house-with-minio/data/taxi/yellow_tripdata_2023-04.parquet",
-        "/home/hungnguyen/lake-house-with-minio/data/taxi/yellow_tripdata_2023-05.parquet",
-        "/home/hungnguyen/lake-house-with-minio/data/taxi/yellow_tripdata_2023-06.parquet",
-        "/home/hungnguyen/lake-house-with-minio/data/taxi/yellow_tripdata_2023-07.parquet"
+        os.path.join(BASE_DIR, "yellow_tripdata_2022-08.parquet"),
+        os.path.join(BASE_DIR, "yellow_tripdata_2022-09.parquet"),
+        os.path.join(BASE_DIR, "yellow_tripdata_2022-10.parquet"),
+        os.path.join(BASE_DIR, "yellow_tripdata_2022-11.parquet"),
+        os.path.join(BASE_DIR, "yellow_tripdata_2022-12.parquet"),
+        os.path.join(BASE_DIR, "yellow_tripdata_2023-01.parquet"),
+        os.path.join(BASE_DIR, "yellow_tripdata_2023-02.parquet"),
+        os.path.join(BASE_DIR, "yellow_tripdata_2023-03.parquet"),
+        os.path.join(BASE_DIR, "yellow_tripdata_2023-04.parquet"),
+        os.path.join(BASE_DIR, "yellow_tripdata_2023-05.parquet"),
+        os.path.join(BASE_DIR, "yellow_tripdata_2023-06.parquet"),
+        os.path.join(BASE_DIR, "yellow_tripdata_2023-07.parquet")
         # Add the paths for the other files here
     ]
 

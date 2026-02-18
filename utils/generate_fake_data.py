@@ -5,7 +5,7 @@ from helpers import load_cfg
 import shutil
 from deltalake.writer import write_deltalake
 
-CFG_PATH = '/home/hungnguyen/lake-house-with-minio/utils/config.yaml'
+CFG_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'config.yaml')
 
 if __name__ == '__main__':
     # Range of timestamp to generate
@@ -19,7 +19,7 @@ if __name__ == '__main__':
     # ts = pd.date_range(start=start_ts, end=end_ts, freq='H')
     # df = pd.DataFrame(ts, columns=['event_timestamp'])
     
-    df = pd.read_parquet("/home/hungnguyen/Caption-Project/utils/output.parquet")
+    df = pd.read_parquet(os.path.join(os.path.dirname(os.path.abspath(__file__)), "output.parquet"))
 
 
     # Random floats in the half-open interval [0.0, 1.0)

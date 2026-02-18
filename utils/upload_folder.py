@@ -4,7 +4,7 @@ from glob import glob
 import os
 
 
-CFG_FILE = '/home/hungnguyen/lake-house-with-minio/utils/config.yaml'
+CFG_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'config.yaml')
 
 def main():
     # Create a client with the MinIO server playground, its access key
@@ -25,7 +25,7 @@ def main():
         print(f'Bucket taxi already exists, skip creating!')
 
     # put object.
-    local_folder = '/home/hungnguyen/Caption-Project/data/taxi-data' 
+    local_folder = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'data', 'taxi-data')
     minio_bucket = 'taxi' 
 
     for root, _, files in os.walk(local_folder):

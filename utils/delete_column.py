@@ -1,9 +1,12 @@
 import pandas as pd
+import os
 
-df = pd.read_parquet('/home/hungnguyen/Caption-Project/data/taxi_combined/part0/0-ec436d91-69d4-42db-b8d0-8ce835ba225b-0.parquet')
+base_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'data', 'taxi_combined', 'part0')
+
+df = pd.read_parquet(os.path.join(base_dir, '0-ec436d91-69d4-42db-b8d0-8ce835ba225b-0.parquet'))
 
 column_to_remove = 'Airport_fee'
 
 df = df.drop(columns=[column_to_remove])
 
-df.to_parquet('/home/hungnguyen/Caption-Project/data/taxi_combined/part0/new-parquet.parquet', index= False)
+df.to_parquet(os.path.join(base_dir, 'new-parquet.parquet'), index=False)

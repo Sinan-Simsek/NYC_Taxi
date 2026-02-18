@@ -4,7 +4,7 @@ import os
 import pyarrow.parquet as pq
 
 #Specify the directory where the Parquet files are stored
-parquet_directory = "/home/hungnguyen/Caption-Project/utils/output.parquet"  # Update this to the actual directory path
+parquet_directory = os.path.join(os.path.dirname(os.path.abspath(__file__)), "output.parquet")
 
 # #List the Parquet files in the directory
 # parquet_files = [os.path.join(parquet_directory, file) for file in os.listdir(parquet_directory) if file.endswith(".parquet")]
@@ -29,7 +29,7 @@ parquet_directory = "/home/hungnguyen/Caption-Project/utils/output.parquet"  # U
 # dataframes = [combined_df[i * rows_per_partition:(i + 1) * rows_per_partition] for i in range(num_partitions)]
 
 #Specify the output directory for the new Parquet files with Delta Lake logs
-output_dir = "/home/hungnguyen/lake-house-with-minio/data/taxi_combined"
+output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'data', 'taxi_combined')
 
 #Create the output directory if it doesn't exist
 if not os.path.exists(output_dir):
